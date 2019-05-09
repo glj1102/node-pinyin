@@ -1,0 +1,61 @@
+{
+  "name": "node-pinyin",
+  "version": "1.0.1",
+  "description": "Man into Pinyin",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "build": "rm -rf build && tsc && mkdir build/source && cp ./package.json build/package.json && cp ./README.md build/README.md && cp ./src/source/* build/source",
+    "rebuild": "npm run-script clean && npm run-script build",
+    "test": "ts-node test/bootstrap.ts",
+    "release": "standard-version",
+    "release-major": "npm run pull-latest && standard-version --release-as major",
+    "release-minor": "npm run pull-latest && standard-version --release-as minor",
+    "release-patch": "npm run pull-latest && standard-version --release-as patch",
+    "pub": "git push --follow-tags origin master && cd ./build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glj1102/node-pinyin.git"
+  },
+  "keywords": [],
+  "author": "gonglinjie",
+  "license": "author gonglinjie",
+  "bugs": {
+    "url": "https://github.com/glj1102/node-pinyin/issues"
+  },
+  "homepage": "https://github.com/glj1102/node-pinyin#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^10.14.4",
+    "@types/node-uuid": "0.0.28",
+    "@types/randomstring": "^1.1.6",
+    "@types/supertest": "^2.0.6",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.3",
+    "minimist": "^1.2.0",
+    "mocha": "^5.2.0",
+    "moment": "^2.24.0",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0",
+    "supertest": "^3.1.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.4000"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "husky": "^2.1.0",
+    "package-json-discover": "^1.0.1"
+  },
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
