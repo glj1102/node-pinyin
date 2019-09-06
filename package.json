@@ -48,7 +48,9 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": ">=4.17.13",
+    "lodash.template": ">=4.5.0",
+    "eslint-utils": ">=1.4.1",
     "husky": "^2.1.0",
     "package-json-discover": "^1.0.1"
   },
