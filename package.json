@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/glj1102/node-pinyin#readme",
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
+    "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^7.5.0",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
